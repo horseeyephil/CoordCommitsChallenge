@@ -1,0 +1,25 @@
+{
+  "name": "coordcommits",
+  "version": "1.0.0",
+  "description": "Assignment for Coord",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node node_modules/.bin/http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horseeyephil/CoordCommitsChallenge.git"
+  },
+  "author": "Philip Gingerich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/horseeyephil/CoordCommitsChallenge/issues"
+  },
+  "homepage": "https://github.com/horseeyephil/CoordCommitsChallenge#readme"
+}
