@@ -8,10 +8,15 @@ const convertToClock = seconds =>{
   return stringify = days + 'days' + hours%24 + 'hours' + minutes%60 + 'minutes' + seconds%60 + 'seconds'  
 }
 
-const renderClock= (futureDate, total, latestCommit, mean) => {
+const renderClock= (nextDate, commitsLength, latest, average) => {
 
   //Aside from displaying our countdown, this function is responsible for initializing our click handler
   //It relies on closure to keep track of relevant averages and latest commits
+
+    let total = commitsLength
+    let latestCommit = latest
+    let mean = average
+    let futureDate = nextDate
 
     const countdown = document.getElementById("countdown")
     setInterval(()=>{
@@ -49,9 +54,6 @@ fetch(`https://api.staging.coord.co/codechallenge/commits`)
   const mean = timesBetweenCommits/commitTimes.length-1
   
   const twoThousand = commitTimes[0] + (mean * (2000-commitTimes.length))
-
-  console.log(commitTimes.length)
-  console.log('Mean ', convertToClock(mean), ' last commit ', convertToClock(Date.now()/1000-commitTimes[0]))
 
   renderClock(Math.floor(twoThousand), commitTimes.length, commitTimes[0], mean)
 })
